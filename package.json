@@ -1,14 +1,33 @@
 {
   "name": "auto-complete",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
+  "description": "A React-based auto-complete component designed as a part of a technical challenge for a job application at Deel. This component is built using modern web technologies and is optimized for performance and usability.",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "build": "vite build",
+    "preview": "vite preview"
   },
+  "repository": {
+    "branch": "main"  
+  },
+  "keywords": [
+    "auto-complete",
+    "react",
+    "job-application",
+    "deel",
+    "frontend",
+    "typescript",
+    "vite",
+    "web-components"
+  ],
+  "author": {
+    "name": "Diego Feder",
+    "email": "diegovfeder@gmail.com"
+  },
+  "license": "UNLICENSED",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -17,7 +36,6 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react-swc": "^3.0.0",
-    "source-map-explorer": "^2.5.3",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   }

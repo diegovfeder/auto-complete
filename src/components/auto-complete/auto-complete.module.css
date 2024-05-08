@@ -1,18 +1,24 @@
 .container {
   display: flex;
   flex-direction: column;
+  width: 350px;
+  margin: 0;
 }
-  
+
 .label {
-  gap: 8px;
   display: flex;
   flex-direction: column;
+  color: var(--text);
+  font-size: 1.2em;
+  font-weight: 600;
   width: 100%;
+  gap: 8px;
 } 
 
 .input {
   display: flex;
-  width: fit-content;
+  font-size: 1.4em;
+  padding: 0.4em 0.6em;
 }
 
 .listContainer {
@@ -25,42 +31,58 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 8px;
-  padding-inline-start: 16px;
-  border: 2px solid var(--primary-dark);
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  padding-top: 0px;
+  padding-inline-start: 0;
+  margin-block: 0;
+  border-top: 0px;
+  border-radius: 2px;
+  border: 1px solid var(--gray);
   overflow-y: auto;
+  list-style: none;
+  height: 200px;
 }
 
-.loading {
-  margin-top: 16px;
-  height: 158px;
-}
-
-.ul {
-  height: 180px;
+.noResults, .loading {
+  color: var(--text);
+  padding-left: 16px;
+  padding-top: 8px;
 }
 
 .li {
-  text-size: 1.6em;
-  margin: 0;  
+  font-size: 1.1em;
+  margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-.li:hover {
-  background-color: var(--primary-dark);
-  color: var(--white-text);
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
 }
 
-.noResults {
-  margin-top: 16px;
-  padding-top: 8px;
-  padding-inline-start: 16px;
-  color: var(--text-white);
-  height: 158px;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 1.1em;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  color: var(--text);
+  background-color: var(--white);
+  white-space: nowrap;
+}
+
+.button:hover, .item:hover, .item:hover {
+  background-color: var(--hover);
 }
 
 .highlightText {
-  background: var(--primary-darker);
+  background-color: var(--highlight);
 }

@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useCallback } from "react";
 
+import styles from "./auto-complete.module.css";
 import { Suggestion } from "../../types";
 import { Input, Loading, SuggestionsList } from ".";
-import styles from "./auto-complete.module.css";
 
 interface AutoCompleteProps {
   suggestions: Suggestion[];
   input: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onInputChange: (value: string) => void;
   loading?: boolean;
   label?: string;
   placeholder?: string;
@@ -16,11 +16,24 @@ interface AutoCompleteProps {
 export default function AutoComplete({
   suggestions,
   input = "",
-  handleChange,
+  onInputChange,
   loading = false,
   label = "",
   placeholder = "",
 }: AutoCompleteProps): JSX.Element {
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const targetValue = event.target.value;
+
+      onInputChange(targetValue);
+    },
+    []
+  );
+
+  const handleItemClick = useCallback((item: string) => {
+    onInputChange(item);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Input
@@ -33,7 +46,11 @@ export default function AutoComplete({
         {loading ? (
           <Loading />
         ) : (
-          <SuggestionsList suggestions={suggestions} input={input} />
+          <SuggestionsList
+            input={input}
+            suggestions={suggestions}
+            onItemClick={handleItemClick}
+          />
         )}
       </div>
     </div>

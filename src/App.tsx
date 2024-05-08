@@ -10,12 +10,10 @@ function App() {
   const [input, setInput] = useState("");
   const debouncedInput = useDebounce(input, 20);
 
-  const handleChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setInput(event.target.value);
-    },
-    []
-  );
+  const handleInputChange = useCallback((value: string) => {
+    setInput(value);
+  }, []);
+
 
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
 
@@ -31,7 +29,6 @@ function App() {
     }
   }, [input]);
 
-  // TODO: Implement actual search query using an API
   const fetchSuggestions = async (search: string): Promise<Suggestion[]> => {
     // Simulate an API call
     return new Promise((resolve) => {
@@ -53,7 +50,7 @@ function App() {
         suggestions={suggestions}
         loading={loading}
         input={debouncedInput}
-        handleChange={handleChange}
+        onInputChange={handleInputChange}
         label={constants.LABEL_SEARCH_FOR_A_COUNTRY}
       />
     </main>
