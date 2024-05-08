@@ -1,6 +1,6 @@
 # Autocomplete Component Challenge 🚀
 
-Hello! I'm Diego Feder, and this is my submission for the front-end coding challenge for Deel. This project includes a React-based autocomplete component developed using Bun as the JavaScript runtime and package manager for optimal performance.
+Hello! I'm Diego Feder, and this is my submission for the front-end coding challenge for Deel. This project includes a React-based autocomplete component developed using Bun as the JavaScript runtime.
 
 ## Features 🌟
 
@@ -16,17 +16,11 @@ Before you run this project, ensure you have Bun installed on your machine. Bun 
 
 ### How to Run the Project 🏃
 
-1. Clone the Repository:
-
-```bash
-bun clone https://github.com/yourusername/deel-autocomplete-challenge.git
-cd deel-autocomplete-challenge
-```
-
-2. Install Dependencies and Start the Application:
+1. Install Dependencies and Start the Application:
 
 ```bash
 bun install
+bun dev
 ```
 
 Navigate to <http://localhost:5173/> in your browser to see the application in action.
@@ -36,9 +30,9 @@ Navigate to <http://localhost:5173/> in your browser to see the application in a
 In the project directory, you can run:
 
 ```bash
-bunx dev # Starts the Vite development server.
-bunx build # Compiles and bundles the React application for production deployment.
-bunx preview #Serves the built application for preview before deployment.
+bun dev # Starts the Vite development server.
+bun run build # Compiles and bundles the React application for production deployment.
+bun preview #Serves the built application for preview before deployment.
 ```
 
 ## 📦 What's Inside?
